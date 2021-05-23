@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Css can be added sepatedly due to less code I added here -->
+<style>
+* {box-sizing: border-box}
+/* Body and Html style */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: blue;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 10%;
+  text-align: center;	
+  
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content ( for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+  background-color: blue;
+}
+/* Fixing footer at the bottom */
+.fixed-footer{
+        bottom: 0;
+        background: black;
+        color: aliceblue;
+    } 
+  /* Tabs at right      */
+    .right{
+        float:right;
+        border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 10%;
+
+  background-color: blue;
+  color: white;
+  height:9%;
+  text-align: center;
+  padding: 14px 16px;	
+  border: none;
+   border-radius: 4px;
+   }
+   .right:hover {
+  background-color: #777;
+}
+/* Button format */
+.button{
+    border: none;
+   border-radius: 4px;
+}
+/* Search button style */
+#search{
+    border: none;
+   border-radius: 50%;
+   height :50px;
+   background-color: blueviolet;
+   color:burlywood;
+
+}
+/* Drop down style */
+select,option{
+    height:30px;
+    border-color: transparent;
+    background: transparent;
+    font-family: 'Times New Roman';
+
+}
+#sug1, #sug2, #people, #sug11,#departure,#return,#open,#close{
+    height: 40px;
+    border-style:double ;
+    border-radius: 4px;
+    padding: 14px 16px;
+}
+/* Trending places */
+.trends{
+  background-color:yellow;
+  color: black;
+  border: dotted;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 10%;
+  text-align: center;	
+
+}
+
+
+/* #Flights,#About,#Car,#Stays,#About {background-image:url('p.jpg');} */
+#Flights {background-image:url('q.jpg');}
+#Car {background-image:url('f.jpg');}
+#Stays {background-image:url('h.jpg');}
+#About {background-image:url('p.jpg');}
+</style>
+</head>
+<body>
+<h1> Tripees</h1>
+
+
+<!-- NAVIGATION BAR -->
+<button class="tablink" onclick="openPage('Flights', this, 'green')" id="defaultOpen">Flights</button>
+<button class="tablink" onclick="openPage('Car', this, 'green')" >Car</button>
+<button class="tablink" onclick="openPage('Stays', this, 'green')">Stays</button>
+<button class="tablink" onclick="openPage('About', this, 'green')">About</button>
+<select class="right" id="MyAccount">
+    <option id="signin">Sign In</option>
+    <option id="signup">Sign Up</option>
+</select>
+<!-- PAGE CONTENT -->
+<div id="Flights" class="tabcontent">
+  <h3>Find best Flights for you</h3>
+  <div>
+    <input type="radio" name="rad" id="one">One-Way
+    <input type="radio" name="rad" id="two">Return
+ 
+ <input type="text" list="number" placeholder="People" id="people">
+    <datalist id="number">
+      <option value="Adult 1">
+        <option value="Adult 2">
+            <option value="Adult 3">
+                <option value="Adult 4">
+                    <option value="Adult 5">
+                        <option value="Adult 6">
+                            <option value="Child 1">
+                                <option value="Child 2">
+
+
+
+
+    </datalist>
+   
+   
+    <select id="seat">
+        <option value="Economy">Economy</option>
+            <option value="PreEconomy">PreEconomy</option>
+            <option value="Business">Business</option>
+            <option value="First">First</option>
+            <option value="Mixed">Mixed</option>
+       
+        </select>
+        
+</div>
+</br>
+ 
+  <input type="text" maxlength="100" list="suggestions1" placeholder="From" id="sug1">
+
+  <datalist id="suggestions1">
+      <option value="Bangalore,Karnataka">
+      <option value="Chennai,TamilNadu">
+      <option value="Hyderabad,Telangana">
+      <option value="Mumbai,Maharastra">
+      <option value="Thirunvanthapuram,Kerala">
+  </datalist>
+  <input type="text" maxlength="100" list="suggestions2" placeholder="To" id="sug2">
+
+  <datalist id="suggestions2" >
+      <option value="Bangalore,Karnataka">
+      <option value="Chennai,TamilNadu">
+      <option value="Hyderabad,Telangana">
+      <option value="Mumbai,Maharastra">
+      <option value="Thirunvanthapuram,Kerala">
+  </datalist>
+  <input type="datetime-local" id="departure">
+  <input type="datetime-local" id="return">
+  <button id="search">Search</button>
+  <div class="center">
+  <center><p>Trending cities to fly</p>
+  <button class="trends">Bengaluru</button>
+  <button class="trends">Hyderabad</button>
+  <button class="trends">Chennai</button>
+  <button class="trends">Pune</button>
+  <button class="trends">Mumbai</button></center>
+</div>
+</div>
+
+<div id="Car" class="tabcontent">
+  <h3>Car Rental</h3>
+    <select id="carrental">
+        <option value="Same dropoff">Same dropoff</option>
+        <option value="Different dropoff">Different dropoff</option>   
+    </select>
+</br>
+</br>
+    <input type="text" maxlength="100" list="suggestion1" placeholder="From" id="sug11">
+
+    <datalist id="suggestion1">
+        <option value="Bangalore,Karnataka">
+        <option value="Chennai,TamilNadu">
+        <option value="Hyderabad,Telangana">
+        <option value="Mumbai,Maharastra">
+        <option value="Thirunvanthapuram,Kerala">
+    </datalist>
+    <input type="datetime-local" id="departure">
+    <input type="datetime-local" id="return">
+    <button id="search">Search</button>
+    <div class="center">
+        <center><p>Trending cities to visit</p>
+        <button class="trends">Bengaluru</button>
+        <button class="trends">Hyderabad</button>
+        <button class="trends">Chennai</button>
+        <button class="trends">Pune</button>
+        <button class="trends">Mumbai</button></center>
+      </div>
+</div>
+
+<div id="Stays" class="tabcontent">
+  <h3>Stay at your best place</h3>
+  <select id="room">
+    <option value="room1">1 Room</option>
+    <option value="room2">2 Room</option>
+    <option value="room3">3 Room</option>
+     <option value="room4">4 Room</option>
+</select>
+</br>
+</br>
+<input type="datetime-local" id="open">
+<input type="datetime-local" id="close">
+<button id="search" onclick="stay()">Search</button>
+<div class="center">
+    <center><p>Trending cities to visit</p>
+    <button class="trends">Bengaluru</button>
+    <button class="trends">Hyderabad</button>
+    <button class="trends">Chennai</button>
+    <button class="trends">Pune</button>
+    <button class="trends">Mumbai</button></center>
+  </div>
+</div>
+
+<div id="About" class="tabcontent">
+  <center><h1>About</h1>
+  <p>Homestay Connections is a homestay aggregator platform startup under Travtrotter Experiences Private Limited registered in New Delhi. We will be standardizing and onboarding only offbeat and cultured homestays on a single platform for the travellers to book and experience stays with locals.</p></center>
+<center><h1>Contact Us</h1>
+<p>Phone:2625488866</p>
+<p>Email:tripees@gmail.com</p></center>
+</div>
+<!-- Footer -->
+<div class="fixed-footer">
+    <div class="container">Copyright &copy; Tripees Company</div>        
+</div>
+<!-- Javascript can  be added separately due to less code I added here-->
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+
+document.getElementById("defaultOpen").click();
+
+
+</script>
+   
+</body>
+</html> 
